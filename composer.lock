@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "531a1b721b3b475f4b75ac42407aa637",
+    "content-hash": "e2c13fae35be5cf44bb77fb15c42ecc0",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -7258,6 +7258,10 @@
             "keywords": [
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v3.3.3"
+            },
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -9243,6 +9247,10 @@
                 "scaffold",
                 "scaffolding"
             ],
+            "support": {
+                "issues": "https://github.com/symfony/maker-bundle/issues",
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.33.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -9473,5 +9481,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }

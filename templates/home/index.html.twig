@@ -3,8 +3,49 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+
+<style>
+a:hover {
+  text-decoration: underline;
+}
+.element {
+  width: 33%;
+}
+.itemsCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+</style>
+
 <div class="container">
-  <h1 class="text-center my-5">Accueil</h1>
+  <div class="head text-center my-5">
+    <h1>Accueil</h1>
+    <h3>Votre site de monitoring en ligne</h3>
+  </div>
+  {# {{ dump(websites) }} #}
+  <div class="itemsCards">
+    {% for website in websites %}
+      <div class="element px-3">
+        <div class="card bg-success text-white mb-3 website-card">
+          <div class="card-header website-card-title">
+            <h4>{{ website.name }}</h4>
+            <small><a href="{{ website.url }}" target="_blank">{{ website.url }}</a></small>
+          </div>
+          <div class="card-body">
+            <div class="website-card-code">
+              HTTP: 200
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="{{ path("website_show", {"id": website.id}) }}" class="btn btn-l btn-white">
+              Voir la fiche.
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{# {{ dump(website) }} #}
+
+{% block body %}
+
+<style>
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+</style>
+
+<div class="container">
+  <h1 class="my-5 text-center">
+    {{ website.name }}
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Url</th>
+        <th scope="col">Code HTTP</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href="{{ website.url }}" target="_blank">{{ website.url }}</a></th>
+        <td>200</td>
+        <td><i class="fas fa-check-circle"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

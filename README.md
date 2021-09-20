@@ -8,6 +8,22 @@ _September 2021_
 
 ![logo](_readme-img/symfony-logo.png)
 
+## Concepts
+
+### Doctrine ORM
+
+Doctrine ORM is an object-relational mapper (ORM) for PHP 7.1+ that provides transparent persistence for PHP objects. It uses the Data Mapper pattern at the heart, aiming for a complete separation of your domain/business logic from the persistence in a relational database management system.
+
+The benefit of Doctrine for the programmer is the ability to focus on the object-oriented business logic and worry about persistence only as a secondary problem. This doesn't mean persistence is downplayed by Doctrine 2, however it is our belief that there are considerable benefits for object-oriented programming if persistence and entities are kept separated.
+
+### PHP entities
+
+Entities are PHP Objects that can be identified over many requests by a unique identifier or primary key. These classes don't need to extend any abstract base class or interface. An entity class must not be final or contain final methods. Additionally it must not implement clone nor wakeup, unless it does so safely.
+
+An entity contains persistable properties. A persistable property is an instance variable of the entity that is saved into and retrieved from the database by Doctrine's data mapping capabilities.
+
+In this app, we have three entities: _Website_, _Admin_ and _Status_.
+
 ## Usefull commands
 
 ### Create Symfony application:
@@ -42,20 +58,6 @@ php -r "unlink('composer-setup.php');"
 `symfony server:start`
 
 `symfony open:local` or [http://localhost:8000/](http://localhost:8000/)
-
-### Packages
-
-- [symfony/orm-pack](https://packagist.org/packages/symfony/orm-pack): A pack for the Doctrine ORM.
-
-`sudo composer require symfony/orm-pack`
-
-- [symfony/maker-bundle](https://packagist.org/packages/symfony/maker-bundle): Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code.
-
-`sudo composer require symfony/maker-bundle`
-
-- [twig/twig](https://packagist.org/packages/twig/twig): Twig, the flexible, fast, and secure template language for PHP.
-
-`composer require twig/twig`
 
 ### Manage Services:
 
@@ -102,6 +104,11 @@ Or to check if the connexion is done, in terminal:
 
 `mysql -u 'USER_NAME -p`
 
+#### Import class in VSCODE
+
+- Right click on any class name and select Import Class to automatically import it's namespace at the top of the file.
+- Press CTRL + ALT + i on Windows / CTRL + Option + i on MacOS.
+
 #### Create controller + template (views)
 
 `php bin/console make:controller <ControllerName>`
@@ -124,7 +131,7 @@ If problem try: `sudo apt-get install php-mysql`
 
 `php bin/console doctrine:migration:migrate`
 
-#### Upadate entity
+#### Update entity
 
 `php bin/console make:entity <ExistingEntityName>`
 
@@ -136,21 +143,27 @@ If problem try: `sudo apt-get install php-mysql`
 
 `php bin/console doctrine:migration:migrate`
 
-## Concepts
+### Packages
 
-### Doctrine ORM
+- [symfony/orm-pack](https://packagist.org/packages/symfony/orm-pack): A pack for the Doctrine ORM.
 
-Doctrine ORM is an object-relational mapper (ORM) for PHP 7.1+ that provides transparent persistence for PHP objects. It uses the Data Mapper pattern at the heart, aiming for a complete separation of your domain/business logic from the persistence in a relational database management system.
+`sudo composer require symfony/orm-pack`
 
-The benefit of Doctrine for the programmer is the ability to focus on the object-oriented business logic and worry about persistence only as a secondary problem. This doesn't mean persistence is downplayed by Doctrine 2, however it is our belief that there are considerable benefits for object-oriented programming if persistence and entities are kept separated.
+- [symfony/maker-bundle](https://packagist.org/packages/symfony/maker-bundle): Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code.
 
-### PHP entities
+`sudo composer require symfony/maker-bundle`
 
-Entities are PHP Objects that can be identified over many requests by a unique identifier or primary key. These classes don't need to extend any abstract base class or interface. An entity class must not be final or contain final methods. Additionally it must not implement clone nor wakeup, unless it does so safely.
+- [twig/twig](https://packagist.org/packages/twig/twig): Twig, the flexible, fast, and secure template language for PHP.
 
-An entity contains persistable properties. A persistable property is an instance variable of the entity that is saved into and retrieved from the database by Doctrine's data mapping capabilities.
+`sudo composer require twig/twig`
 
-In this app, we have three entities: _Website_, _Admin_ and _Status_.
+- [DoctrineFixturesBundle](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html): Fixtures are used to load a "fake" set of data into a database that can then be used for testing or to help give you some interesting data while you're developing your application.
+
+`sudo composer require --dev doctrine/doctrine-fixtures-bundle`
+
+It creates _./src/DataFixtures_.
+
+Use `php bin/console doctrine:fixtures:load` to flush.
 
 ## Useful links
 
@@ -160,3 +173,5 @@ In this app, we have three entities: _Website_, _Admin_ and _Status_.
 - [Getting Started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.9/tutorials/getting-started.html#getting-started-with-doctrine)
 - [DDD et MVC: différence entre 'Model' et 'Entity'](https://www.it-swarm-fr.com/fr/php/ddd-et-mvc-difference-entre-model-et-entity/969716076/)
 - [Symfony Encore](https://grafikart.fr/tutoriels/encore-symfony-1075)
+- [Symfony – Comment mettre en place des Fixtures](https://blog.gary-houbre.fr/developpement/symfony/symfony-comment-mettre-en-place-des-fixtures)
+- [Tutoriel Symfony : Héberger le site sur un hébergement mutualisé](https://www.youtube.com/watch?v=AAap9qRHgIk)

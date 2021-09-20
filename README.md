@@ -102,13 +102,61 @@ Or to check if the connexion is done, in terminal:
 
 `mysql -u 'USER_NAME -p`
 
-#### Create controller + template
+#### Create controller + template (views)
 
 `php bin/console make:controller <ControllerName>`
+
+#### Create entity + repository
+
+`php bin/console make:entity`
+
+`<EntityName>`
+
+-- `<PropertyName>`
+
+---- `<FieldName>`
+
+Migration:
+
+`php bin/console make:migration`
+
+If problem try: `sudo apt-get install php-mysql`
+
+`php bin/console doctrine:migration:migrate`
+
+#### Upadate entity
+
+`php bin/console make:entity <ExistingEntityName>`
+
+-- `<PropertyName>`
+
+---- `<FieldName>`
+
+`php bin/console make:migration`
+
+`php bin/console doctrine:migration:migrate`
+
+## Concepts
+
+### Doctrine ORM
+
+Doctrine ORM is an object-relational mapper (ORM) for PHP 7.1+ that provides transparent persistence for PHP objects. It uses the Data Mapper pattern at the heart, aiming for a complete separation of your domain/business logic from the persistence in a relational database management system.
+
+The benefit of Doctrine for the programmer is the ability to focus on the object-oriented business logic and worry about persistence only as a secondary problem. This doesn't mean persistence is downplayed by Doctrine 2, however it is our belief that there are considerable benefits for object-oriented programming if persistence and entities are kept separated.
+
+### PHP entities
+
+Entities are PHP Objects that can be identified over many requests by a unique identifier or primary key. These classes don't need to extend any abstract base class or interface. An entity class must not be final or contain final methods. Additionally it must not implement clone nor wakeup, unless it does so safely.
+
+An entity contains persistable properties. A persistable property is an instance variable of the entity that is saved into and retrieved from the database by Doctrine's data mapping capabilities.
+
+In this app, we have three entities: _Website_, _Admin_ and _Status_.
 
 ## Useful links
 
 - [WSL2-Windows Linux Subsystem: A guide to install a Local Web Server Ubuntu-20.04 Apache,PHP8 y MySQL8](https://dev.to/aitorsol/wsl2-windows-linux-subsystem-a-guide-to-install-a-local-web-server-ubuntu-20-04-apache-php8-y-mysql8-3bbk)
 - [Symfony CLI](https://symfony.com/download)
 - [How to Use PHP’s built-in Web Server](https://symfony.com/doc/4.4/setup/built_in_web_server.html)
+- [Getting Started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.9/tutorials/getting-started.html#getting-started-with-doctrine)
+- [DDD et MVC: différence entre 'Model' et 'Entity'](https://www.it-swarm-fr.com/fr/php/ddd-et-mvc-difference-entre-model-et-entity/969716076/)
 - [Symfony Encore](https://grafikart.fr/tutoriels/encore-symfony-1075)

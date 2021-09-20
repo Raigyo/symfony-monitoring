@@ -111,3 +111,4 @@ Or to check if the connexion is done, in terminal:
 - [WSL2-Windows Linux Subsystem: A guide to install a Local Web Server Ubuntu-20.04 Apache,PHP8 y MySQL8](https://dev.to/aitorsol/wsl2-windows-linux-subsystem-a-guide-to-install-a-local-web-server-ubuntu-20-04-apache-php8-y-mysql8-3bbk)
 - [Symfony CLI](https://symfony.com/download)
 - [How to Use PHP’s built-in Web Server](https://symfony.com/doc/4.4/setup/built_in_web_server.html)
+- [Symfony Encore](https://grafikart.fr/tutoriels/encore-symfony-1075)

@@ -24,6 +24,12 @@ An entity contains persistable properties. A persistable property is an instance
 
 In this app, we have three entities: _Website_, _Admin_ and _Status_.
 
+### What is the PHP cURL?
+
+cURL stands for the client URL. PHP cURL is a library that is the most powerful extension of PHP. It allows the user to create the HTTP requests in PHP. cURL library is used to communicate with other servers with the help of a wide range of protocols.
+
+cURL allows the user to send and receive the data through the URL syntax. cURL makes it easy to communicate between different websites and domains.
+
 ## Usefull commands
 
 ### Create Symfony application:
@@ -174,4 +180,6 @@ Use `php bin/console doctrine:fixtures:load` to flush.
 - [DDD et MVC: différence entre 'Model' et 'Entity'](https://www.it-swarm-fr.com/fr/php/ddd-et-mvc-difference-entre-model-et-entity/969716076/)
 - [Symfony Encore](https://grafikart.fr/tutoriels/encore-symfony-1075)
 - [Symfony – Comment mettre en place des Fixtures](https://blog.gary-houbre.fr/developpement/symfony/symfony-comment-mettre-en-place-des-fixtures)
+- [Fonctions cURL](https://www.php.net/manual/fr/function.curl-init.php)
+- [Flash Messages](https://www.udemy.com/course/monitoring-de-site-web-avec-symfony/learn/lecture/16932892#questions)
 - [Tutoriel Symfony : Héberger le site sur un hébergement mutualisé](https://www.youtube.com/watch?v=AAap9qRHgIk)

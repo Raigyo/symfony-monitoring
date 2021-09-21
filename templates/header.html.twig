@@ -24,6 +24,16 @@ a, a:hover {
       </li>
     </ul>
   </div>
-
-
 </nav>
+
+<div class="container alerts mt-3">
+  {% for label, messages in app.flashes %}
+    <div class="alert alert-{{ label }} alert-dismissible show">
+      {% for message in messages %}
+      {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+

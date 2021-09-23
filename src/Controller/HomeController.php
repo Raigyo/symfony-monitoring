@@ -30,6 +30,20 @@ class HomeController extends AbstractController
         ]);
     }
     /**
+     * @Route("/websites/clean", name="clean")
+     */
+    public function clean(StatusRepository $repository) {
+      // delete all status
+      $repository->cleanStatusHistory();
+      // message
+      $this->addFlash(
+        'warning',
+        'L\'historique des statuts a bien été effacé!'
+      );
+      // redirect to home
+      return $this->redirectToRoute("home");
+    }
+    /**
      * @Route("/websites/analyze", name="analyze")
      */
     public function analyze(WebsiteRepository $repository, EntityManagerInterface $manager){
@@ -55,7 +69,7 @@ class HomeController extends AbstractController
       $manager->flush();
       $this->addFlash(
         'success',
-        'The diagnosis has been made'
+        'Le diagnostic a bien été effectué!'
       );
       // Redirect to "home" route
       return $this->redirectToRoute("home");

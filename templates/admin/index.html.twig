@@ -10,8 +10,12 @@
       <i class="fas fa-tools"></i>
       Lancer le diagnostic
     </a>
+    <a href="{{ path("admin_new") }}" class="btn btn-success">
+      <i class="fas fa-tools"></i>
+      Ajouter un site
+    </a>
     <a href="{{ path("clean") }}" class="btn btn-warning">
-      <i class="fas fa-sync-alt"></i>
+      <i class="fas fa-plus"></i>
       Nettoyer historique
     </a>
   </div>
@@ -29,8 +33,15 @@
     <tr>
       <th>{{ website.id }}</th>
       <td>{{ website.name }}</td>
-      <td>{{ website.url }}to</td>
-      <td></td>
+      <td>{{ website.url }}</td>
+      <td>
+        <a href="{{ path('admin_remove', {
+          'id': website.id
+        }) }}" class="btn btn-danger">
+          <i class="fas fa-trash"></i>
+          Supprimer
+        </a>
+      </td>
     </tr>
   {% endfor %}
   </tbody>

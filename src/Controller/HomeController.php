@@ -41,7 +41,7 @@ class HomeController extends AbstractController
         'L\'historique des statuts a bien été effacé!'
       );
       // redirect to home
-      return $this->redirectToRoute("home");
+      return $this->redirectToRoute("admin_dashboard");
     }
     /**
      * @Route("/websites/analyze", name="analyze")

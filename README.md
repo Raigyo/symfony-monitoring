@@ -171,6 +171,16 @@ It creates _./src/DataFixtures_.
 
 Use `php bin/console doctrine:fixtures:load` to flush.
 
+- [Bootstrap 5 Form Theme](https://symfony.com/doc/current/form/bootstrap5.html)
+
+_config/packages/twig.yaml_
+
+```yaml
+# config/packages/twig.yaml
+twig:
+  form_themes: ["bootstrap_5_layout.html.twig"]
+```
+
 ## Useful links
 
 - [WSL2-Windows Linux Subsystem: A guide to install a Local Web Server Ubuntu-20.04 Apache,PHP8 y MySQL8](https://dev.to/aitorsol/wsl2-windows-linux-subsystem-a-guide-to-install-a-local-web-server-ubuntu-20-04-apache-php8-y-mysql8-3bbk)
@@ -182,4 +192,5 @@ Use `php bin/console doctrine:fixtures:load` to flush.
 - [Symfony – Comment mettre en place des Fixtures](https://blog.gary-houbre.fr/developpement/symfony/symfony-comment-mettre-en-place-des-fixtures)
 - [Fonctions cURL](https://www.php.net/manual/fr/function.curl-init.php)
 - [Flash Messages](https://www.udemy.com/course/monitoring-de-site-web-avec-symfony/learn/lecture/16932892#questions)
+- [Validation Constraints Reference](https://symfony.com/doc/current/reference/constraints.html)
 - [Tutoriel Symfony : Héberger le site sur un hébergement mutualisé](https://www.youtube.com/watch?v=AAap9qRHgIk)

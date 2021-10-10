@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WebsiteType!{% endblock %}
+{% form_theme form "bootstrap_5_layout.html.twig" %}
+{% block body %}
+<div class="container">
+  <h1 class="my-5 text-center">Ajouter un site web</h1>
+  {{ form_start(form) }}
+    <div class="row">
+      <div class="col-6">
+        {{ form_row(form.name) }}
+      </div>
+      <div class="col-6">
+        {{ form_row(form.url) }}
+      </div>
+      <div class="col-12 text-center my-3">
+        {{ form_row(form.submit) }}
+      </div>
+    </div>
+  {{ form_end(form) }}
+</div>
+
+{% endblock %}

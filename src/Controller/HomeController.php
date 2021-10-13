@@ -38,7 +38,7 @@ class HomeController extends AbstractController
       // message
       $this->addFlash(
         'warning',
-        'L\'historique des statuts a bien été effacé!'
+        'L\'historique des statuts a bien été effacé! Il est nécessaire de relancer le diagnostic des statuts pour les visualiser sur la homepage.'
       );
       // redirect to home
       return $this->redirectToRoute("admin_dashboard");

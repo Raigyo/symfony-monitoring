@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{# {% block title %}Hello AdminController!{% endblock %} #}
 
 {% block body %}
 <div class="container">
@@ -35,11 +35,17 @@
       <td>{{ website.name }}</td>
       <td>{{ website.url }}</td>
       <td>
-        <a href="{{ path('admin_remove', {
+        <a href="{{ path('admin_edit', {
           'id': website.id
-        }) }}" class="btn btn-danger">
-          <i class="fas fa-trash"></i>
-          Supprimer
+          }) }}" class="btn btn-success">
+          <i class="fas fa-edit"></i>
+          Éditer
+        </a>
+        <a  href="{{ path('admin_remove', {
+            'id': website.id
+            }) }}" class="mx-5 btn btn-danger">
+            <i class="fas fa-trash"></i>
+            Supprimer
         </a>
       </td>
     </tr>

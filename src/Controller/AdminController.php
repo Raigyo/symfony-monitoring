@@ -31,12 +31,15 @@ class AdminController extends AbstractController
         $website = new Website();
         $form = $this->createForm(WebsiteType::class, $website);
         $form->handleRequest($request);
+
+        // when user submit
         if($form->isSubmitted() && $form->isValid()){
           $manager->persist($website);
           $manager->flush();
           $this->addFlash('success', 'Site web ajouté avec succès.');
           return $this->redirectToRoute('admin_dashboard');
         }
+
         return $this->render('admin/new.html.twig', [
           "form" => $form->createView()
         ]);
@@ -50,5 +53,26 @@ class AdminController extends AbstractController
       $manager->flush();
       $this->addFlash('warning', 'Site web supprimé avec succès.');
       return $this->redirectToRoute('clean');
+    }
+
+    /**
+     * @Route("/admin/{id}/edit", name="admin_edit")
+     */
+    public function edit(Website $website, Request $request, EntityManagerInterface $manager) {
+
+        $form = $this->createForm(WebsiteType::class, $website);
+        $form->handleRequest($request);
+
+        // when user submit
+        if($form->isSubmitted() && $form->isValid()){
+          $manager->persist($website);
+          $manager->flush();
+          $this->addFlash('success', 'Site web édité avec succès.');
+          return $this->redirectToRoute('admin_dashboard');
+        }
+      // return a view with a form
+      return $this->render('admin/edit.html.twig', [
+        'form' => $form->createView()
+      ]);
     }
 }

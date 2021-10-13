@@ -16,6 +16,8 @@ Doctrine ORM is an object-relational mapper (ORM) for PHP 7.1+ that provides tra
 
 The benefit of Doctrine for the programmer is the ability to focus on the object-oriented business logic and worry about persistence only as a secondary problem. This doesn't mean persistence is downplayed by Doctrine 2, however it is our belief that there are considerable benefits for object-oriented programming if persistence and entities are kept separated.
 
+**Fixtures** are used to load a "fake" set of data into a database that can then be used for testing or to help give you some interesting data while you're developing your application.
+
 ### PHP entities
 
 Entities are PHP Objects that can be identified over many requests by a unique identifier or primary key. These classes don't need to extend any abstract base class or interface. An entity class must not be final or contain final methods. Additionally it must not implement clone nor wakeup, unless it does so safely.
@@ -23,6 +25,20 @@ Entities are PHP Objects that can be identified over many requests by a unique i
 An entity contains persistable properties. A persistable property is an instance variable of the entity that is saved into and retrieved from the database by Doctrine's data mapping capabilities.
 
 In this app, we have three entities: _Website_, _Admin_ and _Status_.
+
+### PHP
+
+**The double arrow operator =>** (assign)
+
+The arrays are accessed with the use of a double arrow operator. In other terms, the operator is also used to assign a certain value to an acceptable type of operator in the array index which can be in the form of either numeric or string-based (associative). Moreover, double arrow operator => assigns the value to an array key.
+
+**The object operator ->** (access)
+
+The -> operator, also known as the object operator is used to access the properties and methods for a specific object. Besides, in simple words, the object operator -> is responsible for accessing an object method.
+
+**Scope resolution operator ::**
+
+:: is called as scope resolution operator (AKA Paamayim Nekudotayim). This operator is used to refer the scope of some block or program context like classes, objects, namespace and etc. For this reference an identifier is used with this operator to access or reproduce the code inside that scope.
 
 ### What is the PHP cURL?
 
@@ -191,6 +207,7 @@ twig:
 - [Symfony Encore](https://grafikart.fr/tutoriels/encore-symfony-1075)
 - [Symfony – Comment mettre en place des Fixtures](https://blog.gary-houbre.fr/developpement/symfony/symfony-comment-mettre-en-place-des-fixtures)
 - [Fonctions cURL](https://www.php.net/manual/fr/function.curl-init.php)
+- [L'opérateur de résolution de portée (::)](https://tecfa.unige.ch/guides/php/php5_fr/language.oop5.paamayim-nekudotayim.html)
 - [Flash Messages](https://www.udemy.com/course/monitoring-de-site-web-avec-symfony/learn/lecture/16932892#questions)
 - [Validation Constraints Reference](https://symfony.com/doc/current/reference/constraints.html)
 - [Tutoriel Symfony : Héberger le site sur un hébergement mutualisé](https://www.youtube.com/watch?v=AAap9qRHgIk)

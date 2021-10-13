@@ -39,14 +39,14 @@ a:hover {
               {% if currentStatus.code == 200 or currentStatus.code == 301 or currentStatus.code == 302 %}
                 <i class="fas fa-check-circle"></i>
               {% elseif currentStatus.code == 404 %}
-                <i class="fas fa-check-triangle"></i>
+                <i class="fas fa-exclamation-triangle"></i>
               {% else %}
-                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-question-circle"></i>
               {% endif %}
             </div>
           </div>
           <div class="card-footer">
-            <a href="{{ path("website_show", {"id": currentStatus.id}) }}" class="btn btn-l btn-white">
+            <a href="{{ path("website_show", {"id": currentStatus.website.id}) }}" class="btn btn-l btn-white">
               Voir la fiche.
             </a>
           </div>

@@ -36,18 +36,21 @@ th a:hover {
         <td>200</td>
         <td><i class="fas fa-check-circle"></i></td>
       </tr> #}
-      {% for  status in website.statuses %}
+      {% for status in website.statuses %}
+      <pre>
+        
+      </pre>
         <tr>
           <th scope="row"><a href="{{ website.url }}" target="_blank">{{ website.url }}</a></th>
-          <td>{{ status.reportedAt | date("d-m-Y")}}</td>
+          <td>{{ status.reportedAt | date("d-m-Y H:i:s")}}</td>
           <td>{{ status.code }}</td>
           <td>
             {% if status.code == 200 or status.code == 301 or status.code == 302 %}
               <i class="fas fa-check-circle"></i>
             {% elseif status.code == 404 %}
-              <i class="fas fa-check-triangle"></i>
+              <i class="fas fa-exclamation-triangle"></i>
             {% else %}
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-question-circle"></i>
             {% endif %}
           </td>
         </tr>

@@ -10,9 +10,27 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AdminController extends AbstractController
 {
+    /**
+     * @Route("/admin/login", name="login")
+     */
+    public function login(AuthenticationUtils $utils) {
+      $error = $utils->getLastAuthenticationError();
+      return $this->render("admin/login.html.twig", [
+        'error' => $error !== null
+      ]);
+    }
+
+    /**
+     * @Route("/admin/logout", name="logout")
+     */
+    public function logout() {
+      
+    }
+
     /**
      * @Route("/admin", name="admin_dashboard")
      */

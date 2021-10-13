@@ -18,11 +18,20 @@ a, a:hover {
         <a href="{{ path("admin_dashboard") }}">Dashboard admin</a>
       </li>
     </ul>
+    {% if app.user %}
+    {# connected or not #}
     <ul class="nav navbar-nav">
       <li class="active">
-        <a href="#0">Connexion</a>
+        <a href="{{ path("logout") }}">Déconnexion</a>
       </li>
     </ul>
+    {% else %}
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="{{ path("login") }}">Connexion</a>
+      </li>
+    </ul>
+    {% endif %}
   </div>
 </nav>
 

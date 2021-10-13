@@ -26,7 +26,7 @@ An entity contains persistable properties. A persistable property is an instance
 
 In this app, we have three entities: _Website_, _Admin_ and _Status_.
 
-### PHP
+### PHP Operators
 
 **The double arrow operator =>** (assign)
 
@@ -45,6 +45,65 @@ The -> operator, also known as the object operator is used to access the propert
 cURL stands for the client URL. PHP cURL is a library that is the most powerful extension of PHP. It allows the user to create the HTTP requests in PHP. cURL library is used to communicate with other servers with the help of a wide range of protocols.
 
 cURL allows the user to send and receive the data through the URL syntax. cURL makes it easy to communicate between different websites and domains.
+
+### Symfony 5: Hash PW using UserPasswordHasherInterface
+
+_DataFixtures/AppFixtures.php_
+
+```php
+// ..
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
+class AppFixtures extends Fixture
+{
+   public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+      $this->encoder = $passwordHasher;
+    }
+    public function load(ObjectManager $manager)
+    {
+      $admin = new Admin();
+      $admin->setEmail('xxx.xxx.com')
+              ->setPassword('xxx');
+      $encoded= $this->encoder->hashPassword($admin, $admin->getPassword());
+      $admin->setPassword($encoded);
+      $manager->persist($admin );
+      //..
+    }
+// ..
+}
+```
+
+_Entity/Admin.php_
+
+```php
+// ..
+    public function setEmail(string $email): self {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self {
+        $this->password = $password;
+
+        return $this;
+    }
+//..
+```
+
+_config/packages/security.yaml_
+
+```yaml
+password_hashers:
+  App\Entity\Admin: "auto"
+```
+
+`php bin/console doctrine:fixtures:load`
 
 ## Usefull commands
 
@@ -208,6 +267,7 @@ twig:
 - [Symfony – Comment mettre en place des Fixtures](https://blog.gary-houbre.fr/developpement/symfony/symfony-comment-mettre-en-place-des-fixtures)
 - [Fonctions cURL](https://www.php.net/manual/fr/function.curl-init.php)
 - [L'opérateur de résolution de portée (::)](https://tecfa.unige.ch/guides/php/php5_fr/language.oop5.paamayim-nekudotayim.html)
+- [PasswordHasher Component](https://symfony.com/blog/new-in-symfony-5-3-passwordhasher-component)
 - [Flash Messages](https://www.udemy.com/course/monitoring-de-site-web-avec-symfony/learn/lecture/16932892#questions)
 - [Validation Constraints Reference](https://symfony.com/doc/current/reference/constraints.html)
 - [Tutoriel Symfony : Héberger le site sur un hébergement mutualisé](https://www.youtube.com/watch?v=AAap9qRHgIk)

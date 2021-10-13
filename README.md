@@ -105,6 +105,34 @@ password_hashers:
 
 `php bin/console doctrine:fixtures:load`
 
+### Secure route admin
+
+_config/packages/security.yaml_
+
+```yaml
+access_control:
+  - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+  - { path: ^/admin, roles: ROLE_ADMIN }
+```
+
+Or
+
+\_Controller/AdminController.php
+
+```php
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+// ...
+    /**
+     * @Route("/admin", name="admin_dashboard")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function index(WebsiteRepository $repository)
+    {
+      // ...
+    }
+// ...
+```
+
 ## Usefull commands
 
 ### Create Symfony application:

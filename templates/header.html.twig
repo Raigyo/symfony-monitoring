@@ -18,7 +18,8 @@ a, a:hover {
         <a href="{{ path("admin_dashboard") }}">Dashboard admin</a>
       </li>
     </ul>
-    {% if app.user %}
+
+    {% if is_granted('ROLE_ADMIN') %}
     {# connected or not #}
     <ul class="nav navbar-nav">
       <li class="active">

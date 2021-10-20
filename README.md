@@ -8,7 +8,7 @@ _September 2021_
 
 Demo online: [Symfony: monitoring](https://raigyo-dev.be/symfony-monitoring/public/index.php/)
 
-![logo](_readme-img/symfony-logo)
+![logo](_readme-img/symfony-logo.png)
 
 ![capture](_readme-img/capture01.png)
 

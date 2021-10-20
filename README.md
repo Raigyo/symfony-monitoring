@@ -1,10 +1,12 @@
 # Create a website monitoring tool with Symfony 5
 
-_September 2021_
+_September / October 2021_
 
 > 🔨 From udemy: [Symfony : projet complet par la pratique - Florent NICOLAS](https://www.udemy.com/course/monitoring-de-site-web-avec-symfony/).
 
 ---
+
+Symfony application to make monitoring of websites and display their http status. Admin can add, delete, update the websites in database (MySQL).
 
 Demo online: [Symfony: monitoring](https://raigyo-dev.be/symfony-monitoring/public/index.php/)
 

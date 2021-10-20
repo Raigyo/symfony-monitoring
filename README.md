@@ -6,7 +6,16 @@ _September 2021_
 
 ---
 
-![logo](_readme-img/symfony-logo.png)
+Demo online: [Symfony: monitoring](https://raigyo-dev.be/symfony-monitoring/public/index.php/)
+
+![logo](_readme-img/capture01.png)
+
+![logo](_readme-img/capture02.png)
+
+## Test offline:
+
+- Clone
+-
 
 ## Concepts
 

@@ -18,6 +18,8 @@ The benefit of Doctrine for the programmer is the ability to focus on the object
 
 **Fixtures** are used to load a "fake" set of data into a database that can then be used for testing or to help give you some interesting data while you're developing your application.
 
+`php bin/console doctrine:fixtures:load`
+
 ### PHP entities
 
 Entities are PHP Objects that can be identified over many requests by a unique identifier or primary key. These classes don't need to extend any abstract base class or interface. An entity class must not be final or contain final methods. Additionally it must not implement clone nor wakeup, unless it does so safely.
@@ -251,6 +253,18 @@ If problem try: `sudo apt-get install php-mysql`
 `php bin/console make:migration`
 
 `php bin/console doctrine:migration:migrate`
+
+#### Create command
+
+`php bin/console make:command`
+
+Ex: `check:status`
+
+Execute with: `php bin/console check:status`
+
+Or add --help for more informations: `php bin/console check:status --help`
+
+_src/command/CheckStatusCommand.php_
 
 ### Packages
 
